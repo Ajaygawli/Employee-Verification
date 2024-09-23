@@ -53,7 +53,7 @@ const Login = () => {
 
             <div className="self-stretch flex flex-col items-start justify-center mt-12">
               <div className="">Welcome back!!</div>
-          
+              <div className="text-blue-300 cursor-pointer" onClick={()=>navigate("/register")}>New Here Please Resgister!</div>
             </div>
 
 

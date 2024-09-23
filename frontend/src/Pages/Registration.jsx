@@ -4,8 +4,10 @@ import axios from 'axios';
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from 'react-toastify';
 import config from '../configuration/config';
+import { useNavigate } from 'react-router-dom';
 
 const Registration = () => {
+    const navigate= useNavigate()
     const [formData, setFormData] = useState({
         companyName: '',
         registrationNo: '',
@@ -30,6 +32,7 @@ const Registration = () => {
             const response = await axios.post(`${config.baseURL}/register/company`, formData);
             console.log('Registration Successful:', response.data);
             toast.success("You have been Registered")
+            navigate("/")
         } catch (error) {
             console.error('Error during registration:', error);
             toast.error("something went wrong")
